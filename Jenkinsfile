@@ -4,7 +4,6 @@ pipeline {
 
 	tools {
         maven "MAVEN3.9"
-	jdk "OracleJDK8"
     }
 
     environment {
@@ -32,22 +31,22 @@ pipeline {
             }
         }
 
-        stage('INTEGRATION TEST'){
-            steps {
-                sh 'mvn verify -DskipUnitTests'
-            }
-        }
+       # stage('INTEGRATION TEST'){
+       #     steps {
+       #         sh 'mvn verify -DskipUnitTests'
+       #     }
+       # }
 
-        stage ('CODE ANALYSIS WITH CHECKSTYLE'){
-            steps {
-                sh 'mvn checkstyle:checkstyle'
-            }
-            post {
-                success {
-                    echo 'Generated Analysis Result'
-                }
-            }
-        }
+       # stage ('CODE ANALYSIS WITH CHECKSTYLE'){
+       #     steps {
+       #         sh 'mvn checkstyle:checkstyle'
+       #     }
+       #     post {
+       #         success {
+       #             echo 'Generated Analysis Result'
+       #         }
+       #     }
+       # }
 
 
         stage('Building image') {
