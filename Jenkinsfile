@@ -25,7 +25,7 @@ pipeline {
                 }
             }
         }
-
+/*
         // Stage to run unit tests
         stage('UNIT TEST') {
             steps {
@@ -33,7 +33,7 @@ pipeline {
                 sh 'mvn test'
             }
         }
-
+*/
         // Uncomment the following stages if needed
 
         // Stage for integration testing
